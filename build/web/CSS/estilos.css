@@ -1,0 +1,268 @@
+/* GERAL*/
+body {
+    background-image: url("../IMGs/bg_body.jpg");
+    background-repeat: space;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+/* Botões de login, cadastro e logout */
+.btn-common {
+    width: auto;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+}
+
+#login-button, #btCarimg{
+    background-color: #920089;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+    margin-top: 1px;
+}
+
+#login-button:hover{
+    background-color: #11a97a;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+}
+#btCarimg:hover{
+    background-color: #11a97a;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+}
+
+#signup-button{
+    background-color: #3d72d4;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+}
+
+#signup-button:hover{
+    background-color: #d4603d;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+}
+
+#logout-button{
+    background-color: #c91212;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+    margin-top: 6px;
+}
+#logout-button:hover{
+    background-color: #910606;
+    color: #FFF;
+    border: 0px !important;
+    padding: 10px;
+}
+
+/* Adicionar borda suave ao redor dos botões */
+.btn-common {
+    border: 2px solid transparent;
+}
+
+.btn-common:hover {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/*Imagens do Discover */
+.tforcover {
+    margin: 10px 0 !important; /* Força a aplicação da margem */
+}
+
+/* Rodapé */
+#rodape {
+    color: #fff;
+    background-color: #000;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* NAV */
+/* Icones e logo */
+#iconN {
+    margin-left: 300px;
+    height: 50px;
+    filter: grayscale(1) invert(1);
+    transition: filter 0.3s ease;
+}
+
+#iconN:hover {
+    filter: brightness(0) invert(0) sepia(100%) hue-rotate(200deg);
+}
+
+#logo {
+    height: 60px;
+    margin-left: 70px;
+    margin-right: 10px;
+}
+
+#logos {
+    margin-left: 50%;
+}
+
+/* Estilo para o texto de usuário */
+#user-apelido {
+    margin-top: 8px;
+    color: #fff;
+}
+
+/* Ajuste para manter os botões na mesma linha */
+#login-button,
+#signup-button,
+#logout-button {
+    margin-left: 10px;
+}
+
+/* INDEX */
+/* Estilo para limitar o tamanho dos quadros */
+.quadro {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Evita que o conteúdo exceda o tamanho do card */
+    margin: 0 auto; /* Centraliza os cards */
+    margin-left: 5px;
+}
+
+/* Ajuste para as imagens dentro dos quadros */
+.quadro img {
+    object-fit: cover; /* Corta a imagem para preencher o quadro */
+    width: 100%;
+    height: 100%;
+    border-radius: 5px; /* Borda arredondada */
+}
+
+/* Barra de pesquisa */
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Imagem no carrossel */
+#imgCar {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilização da tabela */
+#cont {
+    background-color: #272727;
+    color: #ffffff;
+}
+
+#tbv {
+    text-align: center;
+}
+
+#tbv2 {
+    color: #11a97a;
+    text-align: center;
+}
+
+/* INFORMAÇÕES DA CONTA */
+
+/* LOGIN */
+
+/* Garantir que o quadro tenha tamanho fixo de 300x300px */
+.HB {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border-color: #5d0099;
+    width: 300px;  /* Tamanho fixo de 300px */
+    height: 300px; /* Tamanho fixo de 300px */
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o quadro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajusta a imagem dentro do quadro sem distorção */
+.HB img {
+    object-fit: cover; /* Corta a imagem para preencher o quadro */
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para títulos */
+#tH {
+    margin-left: 300px;
+}
+
+#sbr {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Imagens de fundo para os botões */
+#rock1 {
+    background-image: url(../covers/guns-sweetchildomine.jpg);
+    background-size: cover;
+}
+
+        /* Estilo personalizado para o botão de configurações */
+        .btn-custom {
+            background-color: #007bff;
+            color: #FFF;
+            border: 0px !important;
+            padding: 10px;
+            margin-top: 6px;
+            margin-left: 8px
+        }
+
+        btn-custom:hover {
+            background-color: #0056b3;
+            color: #FFF;
+            border: 0px !important;
+            padding: 10px;
+            margin-top: 6px;
+            margin-left: 8px
+        }
+        
+        #config-button {
+        background-color: #007bff;
+        color: #FFF;
+        border: 0px !important;
+        padding: 10px;
+        margin-top: 6px;
+        }
+
+        #config-button:hover {
+        background-color: #0056b3;
+        color: #FFF;
+        border: 0px !important;
+        padding: 10px;
+        }
+
+        /* Adicionar borda suave ao redor do botão */
+        #config-button {
+            border: 2px solid transparent;
+        }
+
+        #config-button:hover {
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }

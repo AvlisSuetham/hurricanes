@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="CSS/cadasLog.css">
+    <link rel="shortcut icon" href="IMGs/logo.png">
+</head>
+<body>
+    <h2>Cadastro de Usuário</h2>
+    <!-- O formulário agora envia os dados para o CadastroServlet via POST -->
+    <form id="register-form" action="CadastroServlet.jsp" method="POST">
+        <input type="text" name="nome" id="nome" placeholder="Nome" required>
+        <input type="text" name="apelido" id="apelido" placeholder="Apelido" required>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
+        <input type="password" name="password" id="password" placeholder="Senha" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+</body>
+</html>

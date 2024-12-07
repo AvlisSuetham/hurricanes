@@ -1,0 +1,199 @@
+/*CADASTRO*/
+body{
+    background-image: url("../IMGs/bg_body.jpg");
+    background-repeat: space;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+#market{
+    text-align: center;
+}
+#iconN{
+    margin-left: 300px;
+    height: 50px;
+    filter: grayscale(1) invert(1);
+}
+#logo{
+    height: 60px;
+    margin-left: 70px;
+    margin-right: 10px;
+}
+#logos{
+    margin-left: 50%;
+}
+
+#btNav{
+    background-color: #920089;
+    border: 0px !important;
+    margin-left: 10px;
+}
+
+#btNav:hover{
+    background-color: #11a97a;
+}
+
+#btLog{
+    background-color: #920089;
+    border: 0px !important;
+    margin-left: 10px;
+}
+
+#btLog:hover{
+    background-color: #11a97a;
+}
+
+#btCarimg{
+    background-color: #ac553a;
+    border: #ac553a;
+}
+#btCarimg:hover{
+    background-color: #a1335a;
+    border: #a1335a;
+}
+
+#btForm{
+    background-color: #b342a0;
+    border: 0px !important;
+    margin-bottom: 10px;
+}
+#btFormC{
+    background-color: #b342a0;
+    border: 0px !important;
+    margin-bottom: 10px;
+}
+#rodape{
+    color: #fff;
+    background-color: #000;
+    width: 100%;
+}
+#cont{
+    background-color: #272727;
+    color: #ffffff;
+}
+#tbv{
+    text-align: center;
+}
+
+#tbv2{
+    color: #11a97a;
+    text-align: center;
+}
+
+#imgCar{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.txtI{
+    text-align: center;
+}
+.HB{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border-color: #5d0099;
+    width: 90%;
+    height: 300px;
+}
+#log{
+    margin-top: 150px;
+    
+}
+#tH{
+    margin-left: 300px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente, caso precise */
+    width: 100%;             /* O contêiner ocupa toda a largura disponível */
+    padding: 20px;           /* Espaçamento opcional ao redor */
+}
+
+#sbr {
+    width: 100%;              /* Define a largura da barra de pesquisa */
+    max-width: 1100px;        /* Define uma largura máxima para não ficar muito grande em telas grandes */
+}
+
+/* LOGIN */
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #003366, #1a1a1a, #800080); /* Gradiente azul, preto e roxo */
+    color: #fff; /* Cor do texto */
+    margin: 0;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(42, 42, 42, 0.9); /* Fundo translúcido para o formulário */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo dos campos de input */
+input {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #007bff; /* Borda azul */
+    background-color: #333; /* Cor de fundo escura para os campos */
+    color: #fff; /* Cor do texto */
+}
+
+input:focus {
+    border-color: #920297; /* Borda verde ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilo dos botões */
+button {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul escuro no hover */
+}
+
+/* Estilo do link para trocar entre login e cadastro */
+a {
+    color: #007bff; /* Cor azul para os links */
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do título */
+h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música</title>
+    <link rel="stylesheet" href="CSS/player.css">
+    <link rel="shortcut icon" href="IMGs/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .player-container {
+            position: relative;
+            z-index: 2;
+        }
+        #visualizer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .music-info {
+            z-index: 2;
+            position: relative;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas para as barras dançantes -->
+    <canvas id="visualizer"></canvas>
+
+    <div class="player-container">
+        <!-- Capa da música -->
+        <div class="music-cover">
+            <img id="cover" src="img/cover1.jpg" alt="Capa da música">
+        </div>
+        
+        <!-- Informações da música -->
+        <div class="music-info">
+            <h2 id="music-title">Título da Música</h2>
+            <audio id="audio-player" controls>
+                <source id="audio-source" src="musicas/musica1.mp3" type="audio/mp3">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
+        
+        <!-- Seção com Músicas Semelhantes e Mesmo Artista -->
+        <div class="music-lists">
+            <div class="similar-songs">
+                <h3>Músicas Semelhantes</h3>
+                <ul id="similar-songs-list">
+                    <!-- Aqui será inserido dinamicamente as músicas semelhantes -->
+                </ul>
+            </div>
+
+            <div class="same-artist-songs">
+                <h3>Músicas do Mesmo Artista</h3>
+                <ul id="same-artist-songs-list">
+                    <!-- Aqui será inserido dinamicamente as músicas do mesmo artista -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Botão de voltar para a homepage -->
+        <div class="back-home">
+            <a href="index.html">
+                <button id="back-button">Voltar para a Homepage</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const musicas = [
+            {
+                titulo: "Hotel California",
+                arquivo: "music/eagles/hotelcalifornia.mp3",
+                capa: "covers/hotelcalifornia.jpg",
+                artista: "Eagles",
+                similar: ["Black", "Sweet Child o' Mine", "Master of Puppets"]
+            },
+            {
+                titulo: "Black",
+                arquivo: "music/pearljam/black.m4a",
+                capa: "covers/pearljam.jpg",
+                artista: "Pearl Jam",
+                similar: ["Hotel California", "Like a Stone", "Stairway to Heaven"]
+            },
+            {
+                titulo: "Sweet Child o' Mine",
+                arquivo: "music/guns/sweetchildomine.m4a",
+                capa: "covers/guns-sweetchildomine.jpg",
+                artista: "Guns N' Roses",
+                similar: ["Hotel California", "We Will Rock You", "Immigrant"]
+            },
+            {
+                titulo: "November Rain",
+                arquivo: "music/guns/novemberrain.m4a",
+                capa: "covers/guns-sweetchildomine.jpg",
+                artista: "Guns N' Roses",
+                similar: ["Black", "Thriller", "Couting Stars"]
+            },
+            {
+                titulo: "Smells Like Teen Spirit",
+                arquivo: "music/nirvana/smells.m4a",
+                capa: "covers/nirvana.jpg",
+                artista: "Nirvana",
+                similar: ["Stairway to Heaven", "Hotel California", "Fury of the Storm"]
+            },
+            {
+                titulo: "Like a Stone",
+                arquivo: "music/audioslave/like.m4a",
+                capa: "covers/audioslave.jpg",
+                artista: "Audioslave",
+                similar: ["Hotel California", "Master of Puppets", "Somebody To Love"]
+            },
+            {
+                titulo: "I Want it All",
+                arquivo: "music/queen/I Want It All.m4a",
+                capa: "covers/QueenTM.jpg",
+                artista: "Queen",
+                similar: ["Like a Stone", "Hotel California", "Beliver"]
+            },
+            {
+                titulo: "We Will Rock You",
+                arquivo: "music/queen/We Will Rock You.m4a",
+                capa: "covers/QueenTM.jpg",
+                artista: "Queen",
+                similar: ["Sweet Child o' Mine", "Black", "Blinding Lights"]
+            },
+            {
+                titulo: "Somebody To Love",
+                arquivo: "music/queen/Somebody To Love.m4a",
+                capa: "covers/QueenTM.jpg",
+                artista: "Queen",
+                similar: ["Hotel California", "Master of Puppets", "Dangerous"]
+            },
+            {
+                titulo: "Master of Puppets",
+                arquivo: "music/metallica/masterofpuppets.m4a",
+                capa: "covers/metallica.jpg",
+                artista: "Metallica",
+                similar: ["Like a Stone", "Black", "Fury of the Storm"]
+            },
+            {
+                titulo: "Stairway to Heaven",
+                arquivo: "music/led/Stairway to Heaven.m4a",
+                capa: "covers/led.jpg",
+                artista: "Led Zeppelin",
+                similar: ["Smells Like Teen Spirit", "We Will Rock You", "Beliver"]
+            },
+            {
+                titulo: "Immigrant",
+                arquivo: "music/led/Immigrant.m4a",
+                capa: "covers/led.jpg",
+                artista: "Led Zeppelin",
+                similar: ["Sweet Child o' Mine", "Like a Stone", "Somebody To Love"]
+            },
+            {
+                titulo: "I was made for loving you",
+                arquivo: "music/kiss/love.MP3",
+                capa: "covers/kiss.jpg",
+                artista: "Kiss",
+                similar: ["Thriller", "Dangerous", "Blinding Lights"]
+            },
+            {
+                titulo: "Fury of the Storm",
+                arquivo: "music/dragonforce/fury.m4a",
+                capa: "covers/dragon.jpeg",
+                artista: "Dragon Force",
+                similar: ["Master of Puppets", "Like a Stone", "Beliver"]
+            },
+            {
+                titulo: "Thriller",
+                arquivo: "music/michael/thriller.MP3",
+                capa: "covers/thriller.jpg",
+                artista: "Michael Jackson",
+                similar: ["I Want it All", "Blinding Lights", "We Will Rock You"]
+            },
+            {
+                titulo: "It will rain",
+                arquivo: "music/bruno/rain.mp3",
+                capa: "covers/itwillrain.jpg",
+                artista: "Bruno Mars",
+                similar: ["Blinding Lights", "Fury of the Storm", "Couting Stars"]
+            },
+            {
+                titulo: "Couting Stars",
+                arquivo: "music/one/stars.MP3",
+                capa: "covers/native.jpg",
+                artista: "One Republic",
+                similar: ["Like a Stone", "We Will Rock You", "Thriller"]
+            },
+            {
+                titulo: "Girls Just Want to Have Fun",
+                arquivo: "music/cyndy/girls.MP3",
+                capa: "covers/cyndy.jpg",
+                artista: "Cyndy Lauper",
+                similar: ["Thriller", "Blinding Lights", "Sweet Child o' Mine"]
+            },
+            {
+                titulo: "Blinding Lights",
+                arquivo: "music/tw/bl.MP3",
+                capa: "covers/tw.jpg",
+                artista: "The Weekend",
+                similar: ["I Want it All", "Fury of the Storm", "Immigrant"]
+            },
+            {
+                titulo: "Kokoron",
+                arquivo: "music/kk/kokoron.MP3",
+                capa: "covers/kk.jpg",
+                artista: "Eve",
+                similar: ["Dangerous", "Couting Stars", "Beliver"]
+            },
+            {
+                titulo: "Beliver",
+                arquivo: "music/id/beliver.MP3",
+                capa: "covers/imagine.jpg",
+                artista: "Imagine Dragons",
+                similar: ["Blinding Lights", "Couting Stars", "Fury of the Storm"]
+            },
+            {
+                titulo: "O Limbo do Menino Sem Olhos",
+                arquivo: "music/kamaitachi/limbo.MP3",
+                capa: "covers/kamaitachi.jpg",
+                artista: "Kamaitachi",
+                similar: ["Dangerous", "Like a Stone", "Somebody To Love"]
+            },
+            {
+                titulo: "Dangerous",
+                arquivo: "music/epic/Dangerous.MP3",
+                capa: "covers/epic.jpg",
+                artista: "Epic",
+                similar: ["Blinding Lights", "Immigrant", "Hotel California"]
+            },
+            {
+                titulo: "Have a Nice Day",
+                arquivo: "music/jovi/niceday.m4a",
+                capa: "covers/jovi.jpeg",
+                artista: "Bon Jovi",
+                similar: ["Sweet Child o' Mine", "Thriller", "Beliver"]
+            }
+        ];
+
+        const audioPlayer = document.getElementById('audio-player');
+        const musicTitle = document.getElementById('music-title');
+        const musicCover = document.getElementById('cover');
+        const similarSongsList = document.getElementById('similar-songs-list');
+        const sameArtistSongsList = document.getElementById('same-artist-songs-list');
+        const audioSource = document.getElementById('audio-source');
+        const body = document.body;
+
+        // Canvas para o visualizador
+        const canvas = document.getElementById('visualizer');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Analisador de áudio
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        const bufferLength = analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+
+        // Função para obter os parâmetros da URL
+        function getMusicParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const music = urlParams.get('music');
+            return music;
+        }
+
+        // Função para carregar a música
+        function loadMusic(music) {
+            const track = musicas.find(m => m.titulo.toLowerCase().replace(/\s/g, '') === music.toLowerCase().replace(/\s/g, ''));
+            if (track) {
+                musicTitle.textContent = track.titulo;
+                audioSource.src = track.arquivo;
+                musicCover.src = track.capa;
+
+                // Atualizar lista de músicas semelhantes
+                similarSongsList.innerHTML = "";
+                track.similar.forEach(song => {
+                    const li = document.createElement("li");
+                    li.textContent = song;
+                    li.onclick = function () {
+                        loadMusic(song);
+                        audioPlayer.play();
+                    };
+                    similarSongsList.appendChild(li);
+                });
+
+                // Atualizar lista de músicas do mesmo artista
+                sameArtistSongsList.innerHTML = "";
+                const sameArtistSongs = musicas.filter(m => m.artista === track.artista && m.titulo !== track.titulo);
+                if (sameArtistSongs.length > 0) {
+                    sameArtistSongs.forEach(song => {
+                        const li = document.createElement("li");
+                        const link = document.createElement("a");
+                        link.href = `?music=${song.titulo}`;
+                        link.textContent = song.titulo;
+                        li.appendChild(link);
+                        sameArtistSongsList.appendChild(li);
+                    });
+                } else {
+                    const li = document.createElement("li");
+                    li.textContent = "Indisponível no momento";
+                    sameArtistSongsList.appendChild(li);
+                }
+
+                // Atualizar a música no player
+                audioPlayer.load();
+
+                // Manter o fundo estável
+                updateBackground(track.capa);
+
+                // Iniciar o visualizador
+                audioPlayer.play();
+                audioContext.resume();
+                const source = audioContext.createMediaElementSource(audioPlayer);
+                source.connect(analyser);
+                analyser.connect(audioContext.destination);
+                drawVisualizer();
+            } else {
+                musicTitle.textContent = "Erro: Música não encontrada";
+                similarSongsList.innerHTML = "";
+                sameArtistSongsList.innerHTML = "";
+            }
+        }
+
+        // Função para alterar o fundo com gradiente baseado na capa da música
+        function updateBackground(coverImage) {
+            const colorThief = new ColorThief();
+            const img = new Image();
+            img.src = coverImage;
+
+            img.onload = function () {
+                const colors = colorThief.getColor(img);  // Pega a cor dominante
+                const secondaryColor = colorThief.getPalette(img, 2)[1];  // Pega uma cor secundária
+
+                // Gera o gradiente com as cores extraídas
+                const gradient = `linear-gradient(135deg, rgb(${colors.join(',')}) , rgb(${secondaryColor.join(',')}))`;
+                body.style.background = gradient;
+            };
+        }
+
+        // Função para desenhar as barras dançantes
+        function drawVisualizer() {
+            requestAnimationFrame(drawVisualizer);
+            analyser.getByteFrequencyData(dataArray);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const barWidth = (canvas.width / bufferLength) * 2.5;
+            let barHeight;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                barHeight = dataArray[i];
+
+                // Cor das barras será branca com transparência
+                ctx.fillStyle = `rgba(255, 255, 255, ${barHeight / 256})`;
+                ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+                x += barWidth + 1;
+            }
+        }
+
+        // Carregar música baseada no parâmetro de URL
+        const musicParam = getMusicParam();
+        if (musicParam) {
+            loadMusic(musicParam);
+        }
+
+        // Alterar o tamanho do canvas ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/cadasLog.css">
+    <link rel="shortcut icon" href="IMGs/logo.png">
+    <script>
+        // Script para exibir mensagem de erro ou sucesso com base nos parâmetros 'error' e 'success' na URL
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Mensagem de erro
+            if (urlParams.get('error') === 'invalid') {
+                alert('E-mail ou senha inválidos! Por favor, tente novamente.');
+            }
+            
+            // Mensagem de sucesso
+            if (urlParams.get('success') === '1') {
+                alert('Cadastro realizado com sucesso! Agora você pode fazer login.');
+            }
+        };
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+    <!-- O formulário envia os dados para o LoginServlet.jsp via POST -->
+    <form action="LoginServlet.jsp" method="POST">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+</body>
+</html>

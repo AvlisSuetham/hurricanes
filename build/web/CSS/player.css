@@ -1,0 +1,144 @@
+/* Estilo geral da página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Fundo claro */
+    transition: background 0.5s ease; /* Transição suave para mudança de fundo */
+}
+
+/* Container do player */
+.player-container {
+    background: #fff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column; /* Disposição em coluna */
+    align-items: center; /* Centraliza o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo */
+    width: 600px; /* Aumentando a largura para comportar as duas listas */
+    text-align: center;
+}
+
+/* Capa da música */
+.music-cover img {
+    width: 120%; /* Cobre toda a largura disponível */
+    height: 100%; /* Cobre toda a altura disponível */
+    object-fit: cover; /* Garante que a imagem cubra completamente a área */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave na capa */
+    max-width: 250px; /* Limita a largura máxima */
+    max-height: 250px; /* Limita a altura máxima */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+/* Estilo para o título da música */
+.music-info {
+    margin: 0 20px; /* Margem para espaçar a informação */
+    text-align: center; /* Centraliza o título */
+    width: 100%; /* Ocupa 100% do espaço disponível */
+}
+
+#music-title {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #333; /* Texto escuro */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center; /* Garante que o título fique centralizado */
+}
+
+/* Estilo para o player de áudio */
+audio {
+    width: calc(100% + 5px); /* Aumenta a largura em 5px */
+    height: 25px; /* Aumenta a altura em 15px */
+    margin-top: 15px;
+    background-color: #ffffff; /* Fundo claro para o controle de áudio */
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Seção de músicas semelhantes e do mesmo artista */
+.music-lists {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilo para a lista de músicas semelhantes */
+.similar-songs,
+.same-artist-songs {
+    text-align: left;
+    width: 48%; /* Divisão de 50% da largura disponível */
+}
+
+.similar-songs h3,
+.same-artist-songs h3 {
+    color: #555; /* Texto em tom de cinza escuro */
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.similar-songs ul,
+.same-artist-songs ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.similar-songs li,
+.same-artist-songs li {
+    cursor: pointer;
+    padding: 5px 0;
+    font-size: 0.9em;
+    color: #666; /* Texto claro */
+    transition: all 0.3s ease;
+}
+
+.similar-songs li:hover,
+.same-artist-songs li:hover {
+    color: #6a61d7; /* Roxo suave */
+    text-decoration: underline;
+}
+
+.similar-songs li.active,
+.same-artist-songs li.active {
+    color: #00b5ff; /* Azul claro quando ativo */
+    font-weight: bold;
+}
+
+/* Estilo para o botão de voltar para a homepage */
+.back-home {
+    margin-top: 20px; /* Espaço entre o botão e os outros elementos */
+    text-align: center; /* Centraliza o botão */
+}
+
+#back-button {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1.2em; /* Tamanho da fonte */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+#back-button:hover {
+    background-color: #FE9900; /* Cor do fundo quando o mouse passa por cima */
+}
+/* Estilo para o nome do artista */
+#music-artist {
+    font-size: 0.8em; /* Fonte menor */
+    color: #888; /* Cor cinza claro */
+    margin-top: 5px; /* Espaço acima do nome do artista */
+    text-transform: capitalize; /* Capitaliza o nome do artista */
+}

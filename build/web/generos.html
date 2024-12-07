@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Hurricane - Gêneros Musicais</title>
+    <link href="CSS/estilos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
+          rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+          crossorigin="anonymous">
+    <link rel="shortcut icon" href="IMGs/logo.png">
+</head>
+<body>
+<div id="container"> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="IMGs/logo.png" id="logo" class="navbar-brand" alt="Logo">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artistas.html">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="generos.html">Gêneros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contato.html">Contato</a>
+                </li>
+            </ul>
+            <form class="d-flex ms-auto me-3">
+                <a href="login.html" id="login-button" class="btn btn-primary btn-sm">Login</a>
+                <a href="register.html" id="signup-button" class="btn btn-secondary btn-sm">Cadastro</a>
+                <h3 id="user-apelido" style="display: none;">
+                    <span id="user-nickname">Usuário</span>
+                </h3>
+                <a href="informacoesConta.html" id="config-button" class="btn btn-sm btn-custom" style="display: none;">Configurações</a>
+                <a href="#" id="logout-button" class="btn btn-custom btn-sm" style="display: none;" onclick="logout()">Logout</a>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<div class="container" id="cont">
+    <section>
+        <!-- Gênero Rock -->
+        <h3>Rock</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Sweet%20Child%20o'%20Mine">
+                        <img src="covers/guns-sweetchildomine.jpg" class="card-img-top img-fluid" alt="Sweet Child o Mine">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Somebody%20To%20Love">
+                        <img src="covers/QueenTM.jpg" class="card-img-top img-fluid" alt="Somebody To Love">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Hotel%20California">
+                        <img src="covers/hotelcalifornia.png" class="card-img-top img-fluid" alt="Hotel California">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Master%20of%20Puppets">
+                        <img src="covers/metallica.jpg" class="card-img-top img-fluid" alt="Back in Black">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Like%20a%20Stone">
+                        <img src="covers/audioslave.jpg" class="card-img-top img-fluid" alt="Like a Stone">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Immigrant">
+                        <img src="covers/led.jpg" class="card-img-top img-fluid" alt="Immigrant">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Smells%20Like%20Teen%20Spirit">
+                        <img src="covers/nirvana.jpg" class="card-img-top img-fluid" alt="Smells Like Teen Spirit">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=I%20was%20made%20for%20loving%20you">
+                        <img src="covers/kiss.jpg" class="card-img-top img-fluid" alt="I Was Made for Loving You">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Fury%20of%20the%20Storm">
+                        <img src="covers/dragon.jpeg" class="card-img-top img-fluid" alt="Fury of the Storm">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gênero Pop -->
+        <h3>Pop</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=thriller">
+                        <img src="covers/thriller.jpg" class="card-img-top img-fluid" alt="Thriller">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=itwillrain">
+                        <img src="covers/itwillrain.jpg" class="card-img-top img-fluid" alt="It Will Rain">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Couting%20Stars">
+                        <img src="covers/native.jpg" class="card-img-top img-fluid" alt="Couting Stars">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Girls%20Just%20Want%20to%20Have%20Fun">
+                        <img src="covers/cyndy.jpg" class="card-img-top img-fluid" alt="Girls Just Want to Have Fun">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=blindinglights">
+                        <img src="covers/tw.jpg" class="card-img-top img-fluid" alt="Blinding Lights">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Kokoron">
+                        <img src="covers/kk.jpg" class="card-img-top img-fluid" alt="Kokoron">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=beliver">
+                        <img src="covers/imagine.jpg" class="card-img-top img-fluid" alt="Beliver">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=O%20Limbo%20do%20Menino%20Sem%20Olhos">
+                        <img src="covers/kamaitachi.jpg" class="card-img-top img-fluid" alt="O Limbo do Menino Sem Olhos">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card quadro">
+                    <a href="player.html?music=Dangerous">
+                        <img src="covers/epic.jpg" class="card-img-top img-fluid" alt="Dangerous">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer id="rodape">
+    <p class="text-center">Hurricane - Todos os direitos reservados - 2024</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+        integrity="sha384-oBqDVmMz4fnFO9gyb8oyFPJHc6PiH8S6r9fZgff0osXBxb4F0s3pPbswH9dR8YLOJ" 
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+        integrity="sha384-cuHjI4TFeOsDo1hveRmr5iKwGL8s56mImRS1duhXBwTLb3jcWv2d/8zSfG10r+93S" 
+        crossorigin="anonymous"></script>
+        
+        <script src="JS/user.js"></script>
+        <script src="JS/logout.js"></script>
+</body>
+</html>
