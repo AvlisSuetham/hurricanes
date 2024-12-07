@@ -40,12 +40,8 @@ Este projeto é licenciado sob a MIT License.
 📞 Contato
 Developers: Matheus Pereira da Silva e Alinne Pereira Rios
 E-mail: matheuspsghx@gmail.com
-💬 Agradecimentos
-Agradecemos por explorar o Hurricane. Se você encontrar algum erro ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou pull request.
+💬 Aqui deixamos nossos agradecimentos por explorar e utilizar o Hurricane,se você encontrar algum erro ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou pull request.
 
 🌟 Siga-nos para mais atualizações!
 GitHub: @AvlisSuetham
-
-
-Este modelo de README contém informações claras sobre o projeto, tecnologias utilizadas, como rodar o projeto localmente, como contribuir e detalhes de contato. Você pode personalizar conforme necessário para se ajustar melhor ao seu estilo e ao seu projeto!
 
