@@ -48,10 +48,10 @@ arquivos: Hurricane.zip, banco_usuarios.sql e Dependências.zip
 
 4. Extraia a pasta de Dependências para um diretório a sua escolha, logo, redirecione o caminho para as mesmas através da IDE para o projeto(obs: Fique atento para adicionar corretamente cada uma das dependências em seus respectivos locais, a NetBeans IDE mostrará um símbolo "⚠️" no projeto se necessário atualizar os locais das dependências, devido a sua importação ter sido originalmente externa no projeto).
 ----------------------------
-📜 Licença
+📜 Licença:
 Este projeto é licenciado sob a MIT License.
 
-📞 Contato
+📞 Contato:
 Developers: Matheus Pereira da Silva e Alinne Pereira Rios
 E-mail: matheuspsghx@gmail.com
 💬 Aqui deixamos nossos agradecimentos por explorar e utilizar o Hurricane.
