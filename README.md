@@ -20,7 +20,7 @@ A ideia é proporcionar uma experiência fluida e agradável para amantes da mú
 - **HTML5** e **CSS3** para o layout e design.
 - **JavaScript** para interatividade e dinamismo na interface.
 - **Bootstrap** para garantir um design responsivo e moderno.
-- **MySQL** para autenticação de usuários e armazenamento e gerenciamento de dados.
+- **MySQL** para autenticação de usuários, armazenamento e gerenciamento de dados.
 - **Java** para gerenciamento de dados no backend.
 - **GitHub** para controle de versão e hospedagem.
 
