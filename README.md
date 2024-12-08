@@ -40,15 +40,13 @@ Recomendação de IDE: **Apache NetBeans IDE**
 
 1. Baixe os Arquivos
 Vá para a última release disponível aqui e baixe os
-arquivos: Hurricane.zip, banco_usuarios.sql e Dependências.zip
+arquivos: Hurricane.zip e banco_usuarios.sql
 
 2. Importe o banco de dados em seu MySQL Workbench
 
 3. Extraia a pasta do Projeto e o abra na sua IDE
 
-4. Extraia a pasta de Dependências para um diretório a sua escolha, logo, redirecione o caminho para as mesmas através da IDE para o projeto(obs: Fique atento para adicionar corretamente cada uma das dependências em seus respectivos locais, a NetBeans IDE mostrará um símbolo "⚠️" no projeto se necessário atualizar os locais das dependências, devido a sua importação ter sido originalmente externa no projeto).
-
-5. **ATENÇÃO** O banco de dados contém por padrão um usuário teste adicionado, para usa-lo no projeto, deve ser feito o login com as seguintes informações:
+4. **ATENÇÃO:** O banco de dados contém por padrão um usuário teste adicionado, para usa-lo no projeto, deve ser feito o login com as seguintes informações:
 **Email:** teste@gmail.com
 **Senha:** teste
 ----------------------------
